@@ -4,6 +4,7 @@ import { useGatewayStore } from '@/stores/gateway'
 import SectionHeading from '@/components/common/SectionHeading.vue'
 
 const store = useGatewayStore()
+// TODO(API): 设备数量较大时，在线率及下方各项统计建议直接使用“概览统计”接口返回值。
 const onlineRate = () => Math.round((store.onlineDevices / store.devices.length) * 100)
 </script>
 
@@ -11,15 +12,18 @@ const onlineRate = () => Math.round((store.onlineDevices / store.devices.length)
   <section class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-label"><Building2 :size="16" /> 接入楼层</div>
+      <!-- TODO(API): 5 和说明文字为写死数据，改为概览统计接口的楼层数/覆盖信息。 -->
       <strong>5</strong><span>客房楼层全覆盖</span><Building2 class="kpi-watermark" :size="36" />
     </div>
     <div class="kpi-card">
       <div class="kpi-label"><Building2 :size="16" /> 房间总数</div>
+      <!-- TODO(API): 28 和房型说明为写死数据，改为概览统计接口返回值。 -->
       <strong>28</strong><span>标准 / 商务 / 行政 / 套房</span
       ><Building2 class="kpi-watermark" :size="36" />
     </div>
     <div class="kpi-card">
       <div class="kpi-label"><Cpu :size="16" /> 设备总数</div>
+      <!-- TODO(API): “4 类”目前写死；改用设备类型统计接口，或根据接口返回的类型集合计算。 -->
       <strong>{{ store.devices.length }}</strong
       ><span>4 类智能设备</span><Cpu class="kpi-watermark" :size="36" />
     </div>
