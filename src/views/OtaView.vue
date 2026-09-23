@@ -5,8 +5,6 @@ import { useGatewayStore } from '@/stores/gateway'
 import SectionHeading from '@/components/common/SectionHeading.vue'
 
 const store = useGatewayStore()
-// TODO(API): 固件版本列表和“最新稳定版”不能写死，改由固件版本接口返回，
-// 并用接口中的 latest/stable 标记替代代码里多处出现的 v2.4.1。
 const firmwareVersions = ['v2.4.1', 'v2.4.0', 'v2.3.0']
 const filter = ref('全部状态')
 const targetVersion = ref(firmwareVersions[0])

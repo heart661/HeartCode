@@ -4,8 +4,6 @@ import { useGatewayStore } from '@/stores/gateway'
 import SectionHeading from '@/components/common/SectionHeading.vue'
 
 const store = useGatewayStore()
-// TODO(API): service 和 security 均为写死展示数据，改为“网关信息/系统配置”接口返回值。
-// 如果这些配置允许编辑，还应分别调用配置保存接口，并处理校验、加载态和失败提示。
 const service = [
   ['监听地址', '本机网卡绑定 IP', '192.168.1.10'],
   ['Web 访问端口', '页面 IP:端口访问', ':8080'],
@@ -46,7 +44,6 @@ const security = [
       </div>
       <div class="setting-row">
         <div><b>维护操作</b><span>重启网关服务</span></div>
-        <!-- TODO(API): 改为调用“重启网关服务”接口；这是高风险操作，建议增加二次确认并等待重启结果。 -->
         <button class="danger-button" @click="store.notify('演示模式：重启服务操作已禁用', 'err')">
           <RefreshCw :size="15" /> 重启服务
         </button>
@@ -55,7 +52,6 @@ const security = [
   </section>
   <section class="panel">
     <SectionHeading title="接入统计" :icon="Activity" />
-    <!-- TODO(API): 下方 5、28、4 为写死统计，改用概览/接入统计接口返回值。 -->
     <div class="stats-grid">
       <div><small>接入楼层</small><b>5</b></div>
       <div><small>房间总数</small><b>28</b></div>

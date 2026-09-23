@@ -1,8 +1,6 @@
 import { AirVent, Lightbulb, LockKeyhole, Snowflake } from '@lucide/vue'
 import type { Device, DeviceMeta, DeviceType, Room } from '@/types/gateway'
 
-// TODO(API): 本文件中的楼层、房间、设备、状态、参数和日志均为演示数据。
-// 接口接入后，建议保留 deviceMeta 作为前端展示配置，其余数据改由 gateway store 调用接口获取。
 export const floors = ['3F', '5F', '8F', '10F', '12F']
 
 export const deviceMeta: Record<DeviceType, DeviceMeta> = {
@@ -20,8 +18,6 @@ const roomGroups = [
   ['12F', '总统套房', ['1201', '1202']],
 ] as const
 
-// TODO(API): 替换为“楼层/房间列表”接口返回的数据；devices 最好由接口返回设备 ID，
-// 或直接通过设备列表中的 room/floor 字段建立关联。
 export const rooms: Room[] = roomGroups.flatMap(([floor, category, ids]) =>
   ids.map((id) => ({
     id,
@@ -31,7 +27,6 @@ export const rooms: Room[] = roomGroups.flatMap(([floor, category, ids]) =>
   })),
 )
 
-// TODO(API): 替换为“设备列表/设备详情”接口。固件版本、在线状态、实时参数和日志都不应在前端生成。
 export const createDevices = (): Device[] =>
   rooms.flatMap((room, roomIndex) =>
     room.devices.map((id, index) => {

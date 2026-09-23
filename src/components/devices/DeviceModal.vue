@@ -27,8 +27,6 @@ type ControlSpec = {
 }
 
 const controlMap: Record<Device['type'], ControlSpec[]> = {
-  // TODO(API): 若后端协议会动态下发设备能力/属性定义，则整个 controlMap 应由“设备物模型/能力”接口生成；
-  // 如果设备类型和字段长期固定，可以继续作为纯前端表单配置保留。
   light: [
     { key: 'power', label: '电源开关', kind: 'switch' },
     { key: 'brightness', label: '亮度调节', kind: 'range', min: 0, max: 100, unit: '%' },
@@ -55,7 +53,6 @@ const specs = computed(() =>
 
 function update(key: string, value: string | number | boolean) {
   if (!store.selectedDevice) return
-  // TODO(API): 真正的参数下发入口在 store.setDeviceParam，接接口时不要只修改当前表单状态。
   store.setDeviceParam(store.selectedDevice, key, value)
 }
 
@@ -110,7 +107,6 @@ function displayValue(value: string | number | boolean | undefined, spec: Contro
                 >{{ store.statusText(store.statusOf(store.selectedDevice)) }}</b
               >
             </div>
-            <!-- TODO(API): 最近心跳目前写死，需展示设备详情/实时状态接口的 lastHeartbeat。 -->
             <div><small>最近心跳</small><b>刚刚</b></div>
               <div v-for="spec in specs" :key="spec.key">
               <small>{{ spec.label }}</small
@@ -161,7 +157,6 @@ function displayValue(value: string | number | boolean | undefined, spec: Contro
                 </select>
               </template>
               <template v-else>
-                <!-- TODO(API): 远程开锁目前只弹成功提示，需调用专用控制接口并处理鉴权、审计和失败响应。 -->
                 <button class="primary-button" @click="store.notify(`${store.selectedDevice.name} 已执行远程开锁`)">
                   <CircleAlert :size="14" /> 执行
                 </button>
@@ -182,7 +177,6 @@ function displayValue(value: string | number | boolean | undefined, spec: Contro
         <template v-else>
           <div class="ota-modal-card">
             <div class="ota-version">
-              <!-- TODO(API): 最新稳定版 v2.4.1 改为固件版本接口返回的最新稳定版本。 -->
               当前固件 <b>{{ store.selectedDevice.firmware }}</b
               ><span>最新稳定版 v2.4.1</span>
             </div>

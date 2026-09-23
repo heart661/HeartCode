@@ -7,8 +7,6 @@ const store = useGatewayStore()
 const floor = ref('全部楼层')
 const level = ref('全部级别')
 const search = ref('')
-// TODO(API): 日志量增大后改为调用日志分页接口，将 floor、level、search、页码和每页条数作为查询参数；
-// 目前是把所有设备日志加载到浏览器后再筛选。
 const logs = computed(() =>
   store.allLogs.filter(
     (log) =>

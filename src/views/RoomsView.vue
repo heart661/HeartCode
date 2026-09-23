@@ -107,7 +107,6 @@ const store = useGatewayStore()
           <div>
             <small>固件版本</small><b>{{ device.firmware }}</b>
           </div>
-          <!-- TODO(API): 最近心跳目前写死为“刚刚”，需在 Device 类型中增加 lastHeartbeat 并展示接口值。 -->
           <div><small>最近心跳</small><b>刚刚</b></div>
         </div>
       </button>
