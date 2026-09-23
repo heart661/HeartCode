@@ -49,7 +49,7 @@ const items: { key: ViewKey; label: string; icon: typeof BarChart3 }[] = [
     </nav>
     <div class="sidebar-footer">
       <div>
-        服务状22222222222222态 <b><i class="status-dot ok"></i>运行中</b>
+        服务状态 <b><i class="status-dot ok"></i>运行中</b>
       </div>
       <div>已运行 1ssssssssssssssssssssssssssssss8d 06:42</div>
       <div>协议 MQTT / Modbus-TCP</div>
