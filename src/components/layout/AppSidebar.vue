@@ -51,7 +51,7 @@ const items: { key: ViewKey; label: string; icon: typeof BarChart3 }[] = [
       <div>
         服务状态 <b><i class="status-dot ok"></i>运行中</b>
       </div>
-      <div>已运行 1ssssssssssssssssssssssssssssss8d 06:42</div>
+      <div>已运行 18d 06:42</div>
       <div>协议 MQTT / Modbus-TCP</div>
     </div>
   </aside>
