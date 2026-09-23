@@ -23,7 +23,9 @@ const items: { key: ViewKey; label: string; icon: typeof BarChart3 }[] = [
 <template>
   <aside class="sidebar" :class="{ open: mobileMenuOpen }">
     <div class="brand">
-      <div class="brand-logo"><Bell :size="22" /></div>
+      <div>
+        <img src="/public/LOGO透明.png" style="width:100px;height:100px;">
+      </div>
       <div>
         <div class="brand-title">华腾智能</div>
         <div class="brand-subtitle">GATEWAY · OPS</div>
