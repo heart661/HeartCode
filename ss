@@ -1,7 +1,0 @@
-[33mb0475c2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m 1
-[33m390085d[m[33m ([m[1;31morigin/main[m[33m)[m addd..
-[33mf585967[m ss
-[33m5a95cc3[m feat:啊啊
-[33mc59feba[m Update README.md with GitHub link
-[33m7e3d2f1[m 上传代码
-[33m0a9be06[m first commit
